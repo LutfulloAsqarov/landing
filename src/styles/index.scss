@@ -1,0 +1,86 @@
+:root {
+    --primaryColor: #fff;
+    --secondaryColor: #fff;
+    --headingColor: #091133;
+    --textColor: #6f7cb2;
+    --btnColor: #111b47;
+    --sectionBgColor: #e7ecff;
+}
+[data-theme="dark"] {
+    --primaryColor: #000; // Qora yoki juda quyuq rang
+    --headingColor: #e7ecff; // Yorqin ko‘k
+    --textColor: #aab4ff; // Yumshoq ko‘kimtir rang
+    --btnColor: #e7ecff; // Yorqin ko‘k
+    --sectionBgColor: #091133; // Quyuq ko‘kimtir
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 100%;
+    max-width: 1142px; // 1440 - (165 * 2) + 32 = 1142px
+    padding: 0 16px;
+    margin: 0 auto;
+}
+
+ul {
+    list-style-type: none;
+}
+
+button {
+    background: transparent;
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.back-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: grid;
+    place-items: center;
+    background: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.title {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 48px;
+    color: var(--headingColor);
+    @media (max-width: 768px) {
+        font-size: 32px;
+        line-height: 44px;
+    }
+    @media (max-width: 480px) {
+        font-size: 28px;
+        line-height: 40px;
+    }
+}
+
+.desc {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    color: var(--textColor);
+}

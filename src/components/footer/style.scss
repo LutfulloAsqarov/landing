@@ -1,0 +1,50 @@
+@use "../../styles/mixins.scss";
+#footer {
+    background: #e7ecff;
+}
+
+.footer {
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 50px 0;
+        border-bottom: 1px solid #cdd1d4;
+        button {
+            @include mixins.button-style();
+        }
+    }
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0 30px;
+        &__list {
+            display: flex;
+            gap: 60px;
+        }
+        &__item {
+            a {
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 24px;
+                color: var(--textColor);
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        &__top {
+            flex-direction: column;
+            gap: 30px;
+        }
+        // &__bottom {
+        &__nav {
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+        // }
+    }
+}

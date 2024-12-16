@@ -1,0 +1,24 @@
+// button uchun mixin
+
+@mixin button-style(
+    $bg-color: var(--btnColor),
+    $padding: 5px 20px,
+    $text-color: var(--primaryColor),
+    $border: var(--btnColor),
+    $size: 12px
+) {
+    background-color: $bg-color;
+    color: $text-color;
+    padding: $padding;
+    border: 1px solid var(--btnColor);
+    border-color: $border;
+    font-size: $size;
+    border-radius: 2px;
+    width: 189px;
+    transition: .3s;
+    &:hover {
+        background: #fff;
+        border-color: var(--btnColor);
+        color: var(--btnColor);
+    }
+}
