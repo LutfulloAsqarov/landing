@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import "./style.scss";
 import { RiMenu3Fill } from "react-icons/ri";
+import Modal from "../modal";
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
@@ -47,12 +49,20 @@ const Header = () => {
                         </li>
                     </ul>
                     <div className="header__nav__logo">Landing</div>
-                    <button className="header__nav__btn">Buy Now</button>
+                    <button
+                        className="header__nav__btn"
+                        onClick={() => setIsOpen(true)}
+                    >
+                        Buy Now
+                    </button>
                     <div className="header__burger" onClick={toggleMenu}>
                         <RiMenu3Fill />
                     </div>
                 </nav>
             </div>
+            <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
+                <p>@lutfullo_asqarov</p>
+            </Modal>
         </header>
     );
 };

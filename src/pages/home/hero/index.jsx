@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import heroImg from "../../../assets/images/hero-bg.png";
 import "./style.scss";
 import ScrollReveal from "../../../components/scroll-reveal";
+import Modal from "../../../components/modal";
 const Hero = () => {
+    const [isOpen, setIsOpen] = useState(false);
     return (
         <section id="hero">
             <div className="container">
@@ -19,13 +21,19 @@ const Hero = () => {
                             quam felis, ultricies nec, pellentesque eu, pretium
                             quis, sem. Nulla consequat massa quis enim.
                         </p>
-                        <div className="hero__btns">
+                        <div
+                            className="hero__btns"
+                            onClick={() => setIsOpen(true)}
+                        >
                             <button>Purchase UI Kit</button>
                             <button>Learn More</button>
                         </div>
                     </div>
                 </ScrollReveal>
             </div>
+            <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
+                <p>@lutfullo_asqarov</p>
+            </Modal>
         </section>
     );
 };
